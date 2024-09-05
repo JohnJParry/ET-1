@@ -4,8 +4,6 @@ https://www.pnas.org/doi/epub/10.1073/pnas.2022340118
 ___
 We proceed to investigate whether we can determine the ‘‘creativity’ of a LLM. We adapt the metric proposed in [Naming unrelated words predicts creativity](https://www.pnas.org/doi/epub/10.1073/pnas.2022340118) to apply to LLMS. 
 
-Related code can be found at: **blah.github**@@@@@@@@@@@
-
 ## Methodology 
 
 We consider two readily available models - **GPT4-o (GPT)** and **Gemini 1.5 Flash (Gemini)** - both of which have already been benchmarked on many of the popular LLM-reasoning datasets, e.g. MMLU, MATH, and GPQA. 
@@ -48,4 +46,7 @@ Both models demonstrated strong performance in their respective tasks; however, 
 
 To measure creativity more accurately, future experiments could integrate **multi-modal elements** of LLMs, such as combining tasks like DAT with creative visual assessments. Additionally, a more nuanced approach to creativity could involve evaluating a model’s ability to produce **innovative solutions** to structured problems, like mathematics, where elegant problem-solving reflects deeper creative capabilities, as opposed to brute-force methods that indicate weaker creativity.
 
-This would align the creativity measurement more closely with the model’s training distribution, providing a more reliable measure of creative reasoning within the framework of structured knowledge tasks.§
+This would align the creativity measurement more closely with the model’s training distribution, providing a more reliable measure of creative reasoning within the framework of structured knowledge tasks.
+
+## References
+	1.	D. L. Kenett, J. Anaki, and M. Faust, “Investigating the structure of semantic networks in low and high creative persons,” Proceedings of the National Academy of Sciences of the United States of America, vol. 118, no. 8, e2022340118, 2021. DOI: https://doi.org/10.1073/pnas.2022340118.
