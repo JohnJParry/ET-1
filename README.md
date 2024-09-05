@@ -1,10 +1,13 @@
+## Proposed Question
+
 (LLM Creativity evaluation) Does naming unrelated words predict creativity in LLMs? *Does this correlate with their reasoning skills?
 
 https://www.pnas.org/doi/epub/10.1073/pnas.2022340118
+
 ___
-We proceed to investigate whether we can determine the ‘‘creativity’ of a LLM. We adapt the metric proposed in [Naming unrelated words predicts creativity](https://www.pnas.org/doi/epub/10.1073/pnas.2022340118) to apply to LLMS. 
 
 ## Methodology 
+We proceed to investigate whether we can determine the ‘creativity’ of an LLM. We adapt the metric proposed in [1] to apply to LLMS. 
 
 We consider two readily available models - **GPT4-o (GPT)** and **Gemini 1.5 Flash (Gemini)** - both of which have already been benchmarked on many of the popular LLM-reasoning datasets, e.g. MMLU, MATH, and GPQA. 
 
