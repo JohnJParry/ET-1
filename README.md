@@ -36,7 +36,7 @@ Moreover, the use cases for these models differs - GPT being optimised for high-
 
 Structured knowledge tasks (MMLU) and creativity tasks (DAT) seem to be at odds with each other, and indeed, we may expect to see a similar inverse correlation in human-focused studies. 
 
-![[./resources/results.pdf]]
+![[./resources/scores.png]]
 ## Conclusion
 
 Our initial investigation suggests that performance on creative tasks such as the Divergent Association Task (DAT) does not necessarily correlate with performance on reasoning tasks, as measured by benchmarks like MMLU. Indeed, these results suggest the opposite may be true—models optimized for structured-knowledge and factual reasoning tasks may exhibit **reduced performance on creative tasks**, likely due to their architectural focus on logical consistency and structured outputs.
