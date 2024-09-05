@@ -28,6 +28,8 @@ The additional prompting to maximise semantic distance between generated words a
 What’s interesting to see is that, on each of the common reasoning metrics between the models (MMLU, MATH, GPQA), GPT scored notably higher. However, we see that performance on ‘‘reasoning’ tasks is not necessarily indicative (or indeed correlated) to model ‘creativity’. 
 ### Creativity vs Reasoning
 
+The results for this experiment can be found in this [Google sheet.](https://docs.google.com/spreadsheets/d/1Hv4O9wbxoC4vxe1XyVB7H9pr0bSTqatjMs9aAgbnMiw/edit?usp=sharing)
+
 The creativity metric proposed explicitly measures divergent thinking - in the case of the task proposed to the LLM, this involves generating unrelated words given one input prompt. Reasoning measures discourage models exhibiting this behaviour, and promotes convergent thinking - reaching a solution to the problem proposed (especially seen in datasets such as MMLU). 
 
 This may suggest why performance on these two metrics is inversely correlated. 
@@ -36,7 +38,6 @@ Moreover, the use cases for these models differs - GPT being optimised for high-
 
 Structured knowledge tasks (MMLU) and creativity tasks (DAT) seem to be at odds with each other, and indeed, we may expect to see a similar inverse correlation in human-focused studies. 
 
-!(https://github.com/JohnJParry/ET-1/blob/main/resources/scores.png)
 ## Conclusion
 
 Our initial investigation suggests that performance on creative tasks such as the Divergent Association Task (DAT) does not necessarily correlate with performance on reasoning tasks, as measured by benchmarks like MMLU. Indeed, these results suggest the opposite may be true—models optimized for structured-knowledge and factual reasoning tasks may exhibit **reduced performance on creative tasks**, likely due to their architectural focus on logical consistency and structured outputs.
