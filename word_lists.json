@@ -1,0 +1,38 @@
+{
+    "low_words_recreation": {
+        "filename": "low_words_recreation.csv",
+        "words": ["arm", "eyes", "feet", "hand", "head", "leg", "body"]
+    },
+    "high_words_recreation": {
+        "filename": "high_words_recreation.csv",
+        "words": ["hippo", "jumper", "machinery", "prickle", "tickets", "tomato", "violin"]
+    },
+    "average_words_recreation": {
+      "filename": "average_words_recreation.csv",
+      "words": ["bag", "bee", "burger", "feast", "office", "shoes", "tree"] 
+    },
+    "gpt4_random_1_words": {
+      "filename": "gpt4_random_1.csv",
+      "words": ["Galaxy", "Whisper", "Aurora", "Timber", "Cascade", "Echo", "Phoenix", "Clover", "Nebula", "Harbor"]
+    },
+    "gpt4_random_2_words": {
+      "filename": "gpt4_random_2.csv",
+      "words": ["Nimbus", "Breeze", "Quartz", "Ember", "Canyon", "Orchid", "Ripple", "Jade", "Frost", "Summit"]
+    },
+    "gpt4_random_3_words": {
+      "filename": "gpt4_random_3_semantic_max.csv",
+      "words": ["Microscope", "Desert", "Symphony", "Volcano", "Algorithm", "Pyramid", "Galaxy", "Tapestry", "Oxygen", "Pancake"]
+    },
+    "gemini1_5_random_1": {
+      "filename": "gemini1_5_random_1.csv",
+      "words": ["Zephyr", "Serendipity", "Obsidian", "Quixotic", "Ambrosia", "Labyrinth", "Elysian", "Silhouette", "Equinox", "Rhapsody"]
+    }, 
+    "gemini1_5_random_2": {
+      "filename": "gemini1_5_random_2.csv",
+      "words": ["Sanguine", "Ephemeral", "Intrepid", "Serene", "Melancholy", "Euphoria", "Enigma", "Zenith", "Abyss", "Nostalgic"]
+    }, 
+    "gemini1_5_random_3": {
+      "filename": "gemini1_5_random_3.csv",
+      "words": ["Quantum", "Renaissance", "Oligarchy", "Serendipity", "Melancholia", "Euphoria", "Enigma", "Zenith", "Abyssal", "Nostalgia"] 
+  }
+}
