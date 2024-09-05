@@ -1,5 +1,4 @@
 ## Proposed Question
-
 (LLM Creativity evaluation) Does naming unrelated words predict creativity in LLMs? *Does this correlate with their reasoning skills?
 
 https://www.pnas.org/doi/epub/10.1073/pnas.2022340118
@@ -21,26 +20,17 @@ We first re-calculated the presented unrelated word lists in the paper, to verif
 
 We prompt each model three times - the first two prompts provided are the same “Generate a list of 10 unrelated words”, and the final prompt is “Generate a list of 10 unrelated words - maximise the semantic distance between them”. The score matrices are calculated along with the average scores. We compare the performance of the two models, along with comparing this to each models performance on common LLM ‘reasoning’ benchmarks. 
 ## Results
-
-Both models exhibit above average performance relative to the scores determined by [1], GPT scoring on average 79.93 and Gemini scoring on average 83.46, putting both models in the average - good band. 
-
-The additional prompting to maximise semantic distance between generated words appears to have little influence on the scores. 
-
-What’s interesting to see is that, on each of the common reasoning metrics between the models (MMLU, MATH, GPQA), GPT scored notably higher. However, we see that performance on ‘‘reasoning’ tasks is not necessarily indicative (or indeed correlated) to model ‘creativity’. 
-### Creativity vs Reasoning
-
 The results for this experiment can be found in this [Google sheet.](https://docs.google.com/spreadsheets/d/1Hv4O9wbxoC4vxe1XyVB7H9pr0bSTqatjMs9aAgbnMiw/edit?usp=sharing)
 
-The creativity metric proposed explicitly measures divergent thinking - in the case of the task proposed to the LLM, this involves generating unrelated words given one input prompt. Reasoning measures discourage models exhibiting this behaviour, and promotes convergent thinking - reaching a solution to the problem proposed (especially seen in datasets such as MMLU). 
+Both models exhibit above-average performance relative to the benchmarks determined by [1], with GPT scoring an average of 79.93 and Gemini 83.46. These scores place both models in the ‘average to good’ performance band for the DAT task. We also see that additional prompting aimed at maximising semantic distance between generated words had little effect on creativity scores, indicating that the models’ performance in divergent thinking tasks is not easily influenced by naive prompt modifications.
 
-This may suggest why performance on these two metrics is inversely correlated. 
+Interestingly, GPT consistently outperformed Gemini in reasoning benchmarks, such as MMLU, MATH, and GPQA, suggesting that it is better suited for structured knowledge tasks. However, the inverse correlation observed between performance on reasoning and creativity tasks suggests that these two cognitive functions may be independent of each other, if not in opposition. 
 
-Moreover, the use cases for these models differs - GPT being optimised for high-precision text based tasks, and Gemini focusing on multimodality and extended context windows. It would seem sensible that an LLM with superior image generation capabilities would be deemed more ‘creative’, and hence score higher in the ‘creativity’ test. 
+While GPT is optimised for high-precision text-based tasks, Gemini appears to be build with a heavier multi-modal focus, along with extending contest windows. It may be that these multi-modal design choices contribute to its ability to perform well at creative tasks. These initial findings may hint at a trade-off between creative and reasoning tasks in LLMs; reasoning at the cost of creative flexibility. 
 
-Structured knowledge tasks (MMLU) and creativity tasks (DAT) seem to be at odds with each other, and indeed, we may expect to see a similar inverse correlation in human-focused studies. 
+Further experiments could explore more in-distribution tasks, for example, proposing various unique elegant solutions to mathematical problems. Typically, the component separating a brute-force solution from an elegant solution is a level of creativity in approaching the problem, which is perhaps a better measure for LLMs designed with reasoning as their primary focus.
 
 ## Conclusion
-
 Our initial investigation suggests that performance on creative tasks such as the Divergent Association Task (DAT) does not necessarily correlate with performance on reasoning tasks, as measured by benchmarks like MMLU. Indeed, these results suggest the opposite may be true—models optimized for structured-knowledge and factual reasoning tasks may exhibit **reduced performance on creative tasks**, likely due to their architectural focus on logical consistency and structured outputs.
 
 Moreover, while the trend in state-of-the-art (SoA) LLMs leans towards **multi-modality**, this additional capacity appears to benefit models in creative tasks such as DAT. Multi-modal models like Gemini 1.5 Flash, designed for handling diverse input types, excel in creativity over purely text-based models. To achieve a fair comparison, creative tasks should perhaps be measured more consistently within text-only models.
