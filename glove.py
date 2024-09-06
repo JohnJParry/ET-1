@@ -7,9 +7,11 @@ import itertools
 import csv
 import os
 import json
+from typing import List, Tuple, Dict, Optional
 
 
-def load_glove_embeddings(file_path:str) -> dict:
+
+def load_glove_embeddings(file_path:str) -> Dict[str, Tensor]:
     """
     Load GloVe embeddings.
     Pre-trained weights download link can be found here: https://nlp.stanford.edu/projects/glove/
@@ -29,7 +31,7 @@ def load_glove_embeddings(file_path:str) -> dict:
             embeddings[word] = torch.tensor(vector)
     return embeddings
 
-def get_word_vector(word:str, embeddings:dict):
+def get_word_vector(word:str, embeddings:Dict[str, Tensor]) -> Tensor:
     """
     Returns the associated word vector. 
     Args:
@@ -46,7 +48,7 @@ def cosine_similarity(vec1:Tensor, vec2:Tensor)->float:
     cos_sim = F.cosine_similarity(vec1.unsqueeze(0), vec2.unsqueeze(0))
     return cos_sim.item()
 
-def compute_avg_cosine_distance_score(words:list, embeddings:dict[str, Tensor]):
+def compute_avg_cosine_distance_score(words:List[str], embeddings:Dict[str, Tensor]) -> float:
     """
     Calculate Divergent Association Task (DAT) score. See https://www.pnas.org/doi/epub/10.1073/pnas.2022340118.
     We calculate the average score based on 7 extracted words. 
@@ -74,7 +76,7 @@ def compute_avg_cosine_distance_score(words:list, embeddings:dict[str, Tensor]):
     
     return score
 
-def compute_similarity_matrix(words:list, embeddings:dict[str, Tensor]):
+def compute_similarity_matrix(words:List[str], embeddings:Dict[str, Tensor]) -> np.ndarray:
     """
     Compute the similarity matrix for a list of words. 
     Args: 
@@ -90,7 +92,7 @@ def compute_similarity_matrix(words:list, embeddings:dict[str, Tensor]):
         matrix.append((word1, word2, score))
     return matrix
 
-def save_similarity_matrix_csv(matrix:np.ndarray, words:list, output_file:str):
+def save_similarity_matrix_csv(matrix:np.ndarray, words:List[str], output_file:str) -> None:
     """
     Save similarity matrix into .csv file in matrix format for displaying in sheets. 
     Note that scores are rounded to be consistent with scores presented in 
@@ -110,7 +112,7 @@ def save_similarity_matrix_csv(matrix:np.ndarray, words:list, output_file:str):
                     row.append(round(score))
             csvwriter.writerow(row)
 
-def save_summary_csv(summary_data:list, output_file:str):
+def save_summary_csv(summary_data:List[Tuple[str, float]], output_file:str) -> None:
     """
     Save average scores for each experiment to .csv file. 
     """
@@ -120,7 +122,7 @@ def save_summary_csv(summary_data:list, output_file:str):
         for row in summary_data:
             csvwriter.writerow(row)
 
-def process_word_lists_from_json(json_file:str, embeddings:dict[str, Tensor], output_dir:str):
+def process_word_lists_from_json(json_file:str, embeddings:Dict[str, Tensor], output_dir:str) -> None:
     """
     Batch process LLM generated list of words contained in .json file. 
     .json file should be formatted with enteries:
@@ -158,7 +160,7 @@ def process_word_lists_from_json(json_file:str, embeddings:dict[str, Tensor], ou
     save_summary_csv(summary_data, summary_file_path)
     print(f"Summary of DAT scores saved to {summary_file_path}")
 
-def main():
+def main() -> None:
     glove_file_path = '/home/balthier/Downloads/glove.42B.300d.txt'
     glove_embeddings = load_glove_embeddings(glove_file_path)
     json_file_path = './word_lists.json'
